@@ -45,7 +45,7 @@ pip install requests beautifulsoup4 html2text
 4. Run the script:
 
 ```bash
-python crawl_data_dkmh.py
+python main.py
 ```
 
 The script will log in to your MyBK account, scrape class schedules and course information, and save the data to a JSON file named `data.json`.
