@@ -67,7 +67,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgments
 
 This script was created by @KenKout, inspired by @namanhishere. If you have any questions or need assistance, feel free to contact me or open issue.
-
-```
-
-Replace "Your Name," "your_username," and "your_password" with appropriate information, and customize the README as needed for your project.
