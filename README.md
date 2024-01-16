@@ -66,4 +66,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgments
 
-This script was created by @KenKout, inspired by @namanhishere. If you have any questions or need assistance, feel free to contact me or open issue.
+This script was created by [@KenKout](https://www.github.com/KenKout), inspired by [@namanhishere](https://www.github.com/namanhishere). If you have any questions or need assistance, feel free to contact me or open issue.
