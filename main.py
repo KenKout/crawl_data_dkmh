@@ -19,16 +19,16 @@ def login_sso():
     resp2 = s.post(url, headers=headers, data=data)
     print('Function - Login: Success')
 
-def get_info_monhocID():
+def get_info_monhocID(hocKyId,dotDKId):
 
     resp1 = s.get('https://mybk.hcmut.edu.vn/dkmh', headers=headers)
     resp2 = s.get('https://mybk.hcmut.edu.vn/dkmh/home.action', headers=headers)
     resp3 = s.get('https://mybk.hcmut.edu.vn/dkmh/dangKyMonHocForm.action', headers=headers)
     # Select Dot DKMH
-    resp4 = s.post('https://mybk.hcmut.edu.vn/dkmh/ketQuaDangKyView.action', headers=headers, data=f"hocKyId=563")
-    resp5 = s.post('https://mybk.hcmut.edu.vn/dkmh/getDanhSachDotDK.action', headers=headers, data=f"hocKyId=563")
-    resp6 = s.post('https://mybk.hcmut.edu.vn/dkmh/getLichDangKy.action', headers=headers, data=f"dotDKId=645&dotDKHocVienId=645")
-    resp7 = s.post('https://mybk.hcmut.edu.vn/dkmh/getDanhSachMonHocDangKy.action', headers=headers, data=f"dotDKId=645")
+    resp4 = s.post('https://mybk.hcmut.edu.vn/dkmh/ketQuaDangKyView.action', headers=headers, data=f"hocKyId={hocKyId}")
+    resp5 = s.post('https://mybk.hcmut.edu.vn/dkmh/getDanhSachDotDK.action', headers=headers, data=f"hocKyId={hocKyId}")
+    resp6 = s.post('https://mybk.hcmut.edu.vn/dkmh/getLichDangKy.action', headers=headers, data=f"dotDKId={dotDKId}&dotDKHocVienId={dotDKId}")
+    resp7 = s.post('https://mybk.hcmut.edu.vn/dkmh/getDanhSachMonHocDangKy.action', headers=headers, data=f"dotDKId={dotDKId}")
     resp8 = s.post('https://mybk.hcmut.edu.vn/dkmh/getKetQuaDangKy.action', headers=headers)
     resp9 = s.post('https://mybk.hcmut.edu.vn/dkmh/searchMonHocDangKy.action', headers=headers, data=f"msmh= ")
     monHocId = []
@@ -162,7 +162,7 @@ s = requests.Session()
 headers = CaseInsensitiveDict()
 headers["Content-Type"] = "application/x-www-form-urlencoded"
 login_sso()
-monHocId = get_info_monhocID()
+monHocId = get_info_monhocID('563','645')
 final_result = []
 for id in monHocId:
     info = s.post('https://mybk.hcmut.edu.vn/dkmh/getThongTinNhomLopMonHoc.action', headers=headers, data=f"monHocId={id}")
